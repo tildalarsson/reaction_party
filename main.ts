@@ -42,15 +42,15 @@ input.onGesture(Gesture.TiltRight, function () {
 radio.onReceivedValue(function (name, value) {
     if (name == control.deviceName()) {
         if (value == 111) {
-            basic.showString("Rätt!")
-            Poängställning += 1
+            basic.showString("Rätt!",50)
+Poängställning += 1
         } else {
-            basic.showString("Fel!")
+            basic.showString("Fel!",50)
         }
     }
 })
-let Motor = false
 let Poängställning = 0
+let Motor = false
 Motor = true
 basic.forever(function () {
     radio.setGroup(18)
