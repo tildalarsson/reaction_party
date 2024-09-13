@@ -57,4 +57,8 @@ Motor = true
 radio.setGroup(18)
 basic.forever(function () {
     basic.showNumber(Poängställning)
+    if (Poängställning == 5) {
+        radio.sendValue(control.deviceName(), 999)
+        basic.showString("VINST!!!")
+    }
 })
