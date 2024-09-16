@@ -1,3 +1,10 @@
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 999) {
+        if (Poängställning < 5) {
+            basic.showIcon(IconNames.Sad)
+        }
+    }
+})
 input.onButtonPressed(Button.A, function () {
     if (Motor) {
         radio.sendValue(control.deviceName(), 1)
@@ -53,12 +60,16 @@ radio.onReceivedValue(function (name, value) {
 })
 let Poängställning = 0
 let Motor = false
+let visapoäng = 1
 Motor = true
 radio.setGroup(18)
 basic.forever(function () {
-    basic.showNumber(Poängställning)
-    if (Poängställning == 5) {
-        radio.sendValue(control.deviceName(), 999)
-        basic.showString("VINST!!!")
+    if (visapoäng == 1) {
+        basic.showNumber(Poängställning)
+        if (Poängställning == 5) {
+            visapoäng = 0
+            radio.sendNumber(999)
+            basic.showString("VINST!!!")
+        }
     }
 })
