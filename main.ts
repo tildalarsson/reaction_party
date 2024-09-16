@@ -1,6 +1,8 @@
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 999) {
         if (Poängställning < 5) {
+            visapoäng = 0
+            basic.pause(100)
             basic.showIcon(IconNames.Sad)
         }
     }
@@ -60,7 +62,8 @@ radio.onReceivedValue(function (name, value) {
 })
 let Poängställning = 0
 let Motor = false
-let visapoäng = 1
+let visapoäng = 0
+visapoäng = 1
 Motor = true
 radio.setGroup(18)
 basic.forever(function () {
