@@ -1,7 +1,7 @@
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 999) {
         if (Poängställning < 5) {
-            visapoäng = 0
+            visapoäng = false
             basic.pause(100)
             basic.showIcon(IconNames.Sad)
         }
@@ -62,15 +62,15 @@ radio.onReceivedValue(function (name, value) {
 })
 let Poängställning = 0
 let Motor = false
-let visapoäng = 0
-visapoäng = 1
+let visapoäng = false
+visapoäng = true
 Motor = true
 radio.setGroup(18)
 basic.forever(function () {
-    if (visapoäng == 1) {
+    if (visapoäng == true) {
         basic.showNumber(Poängställning)
         if (Poängställning == 5) {
-            visapoäng = 0
+            visapoäng = false
             radio.sendNumber(999)
             basic.showString("VINST!!!")
         }
