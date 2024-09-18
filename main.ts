@@ -52,10 +52,10 @@ radio.onReceivedValue(function (name, value) {
             Poängställning += 1
             basic.showIcon(IconNames.Heart)
             basic.pause(2000)
-        } else {
-            basic.showIcon(IconNames.No)
-            basic.pause(2000)
         }
+    } else {
+        basic.showIcon(IconNames.No)
+        basic.pause(2000)
     }
 })
 let Poängställning = 0
