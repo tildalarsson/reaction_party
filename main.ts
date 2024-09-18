@@ -53,7 +53,7 @@ radio.onReceivedValue(function (name, value) {
             basic.showIcon(IconNames.Heart)
             basic.pause(2000)
         }
-    } else {
+    } else if (value == 111) {
         basic.showIcon(IconNames.No)
         basic.pause(2000)
     }
