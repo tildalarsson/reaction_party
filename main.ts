@@ -1,10 +1,8 @@
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 999) {
-        if (Poängställning < 5) {
-            visapoäng = false
-            basic.pause(100)
-            basic.showIcon(IconNames.Sad)
-        }
+        visapoäng = false
+        basic.pause(100)
+        basic.showIcon(IconNames.Sad)
     }
 })
 input.onButtonPressed(Button.A, function () {
